@@ -18,6 +18,6 @@ public class CameraController : MonoBehaviour
         float mX = Input.GetAxis("Mouse X");
         float mY = Input.GetAxis("Mouse Y");
         transform.Rotate(0, mX * sensitivity, 0);
-        camera.transform.Rotate(mY* sensitivity, 0, 0);
+        camera.transform.Rotate(-mY* sensitivity, 0, 0);
     }
 }
