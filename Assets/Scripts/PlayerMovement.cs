@@ -55,6 +55,22 @@ public class PlayerMovement : MonoBehaviour
             _animator.SetTrigger("Shoot");
         }
 
+        
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            Rigidbody rigidbody = GetComponent<Rigidbody>();
+            rigidbody.AddForce(Vector3.up * 20);
+        }
+
+
+
+
         _animator.SetFloat("speed", currentMovement.magnitude);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        Destroy(other.gameObject);
     }
 }
